@@ -4,7 +4,7 @@ This demo introduce a demo to intrgrate [Github webhook](https://docs.github.com
 
 Since Github webhook's timeout is too short (avg 7s), so we use an async function to process Github event, the data flow is showing in picture below:
 
-![](https://congxiao.oss-cn-beijing.aliyuncs.com/Untitled%20Diagram%20%284%29.png)
+![arg](https://congxiao-us.oss-us-west-1.aliyuncs.com/Untitled%20Diagram.png)
 
 
 ## Step1: Prepare the environment
