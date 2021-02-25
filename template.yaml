@@ -1,0 +1,30 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  fc-github-demo:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'fc github demo'
+      InternetAccess: true
+      LogConfig:
+        Project: $your_project$
+        Logstore: $your_logstore$
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: python2.7
+        CodeUri: './'
+        Timeout: 60
+      Events:
+        httpTrigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: ['POST', 'GET']
+    func2:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: task.handler
+        Runtime: python2.7
+        CodeUri: './'
+        Timeout: 600
